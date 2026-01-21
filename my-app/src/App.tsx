@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Section from "./components/Section";
 import Card from "./components/Card";
 import Pill from "./components/Pill";
-import ExternalLink from "./components/ExternalLink";
 
 export default function App() {
   const [theme] = useState<string>("dark");
