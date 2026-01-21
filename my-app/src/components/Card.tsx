@@ -7,9 +7,11 @@ type CardProps = {
   meta?: ReactNode;
   children?: ReactNode;
   footer?: ReactNode;
+  action?: ReactNode;
+  secondaryAction?: ReactNode;
 };
 
-export default function Card({ title, subtitle, meta, children, footer }: CardProps) {
+export default function Card({ title, subtitle, meta, children, footer, action, secondaryAction }: CardProps) {
   return (
     <div className="card">
       <div className="cardTop">
@@ -22,6 +24,8 @@ export default function Card({ title, subtitle, meta, children, footer }: CardPr
 
       {children ? <div className="cardBody">{children}</div> : null}
       {footer ? <div className="cardFooter">{footer}</div> : null}
+      {action ? <div className="cardAction">{action}</div> : null}
+      {secondaryAction ? <div className="cardSecondaryAction">{secondaryAction}</div> : null}
     </div>
   );
 }

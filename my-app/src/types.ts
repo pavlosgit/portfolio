@@ -15,6 +15,9 @@ export type Education = {
   school: string;
   program: string;
   notes?: string[];
+  courses?: string[];
+  thesisLink?: string;
+  modalDescription?: string;
 };
 
 export type Project = {
@@ -22,6 +25,11 @@ export type Project = {
   description: string;
   stack?: string[];
   links?: Link[];
+};
+
+export type SkillCategory = {
+  name: string;
+  skills: string[];
 };
 
 export type ResumeData = {
@@ -36,7 +44,7 @@ export type ResumeData = {
     github?: string;
     linkedin?: string;
   };
-  skills: string[];
+  skills: SkillCategory[];
   languages?: string[];
   experience: Experience[];
   education: Education[];
