@@ -6,7 +6,7 @@ export const resumeData: ResumeData = {
   title: "MSc in Engineering, Computer Science",
   location: "Stockholm, Sweden",
   summary:
-    "I recently completed my Bachelor's and Master's degrees in IT, and I'm passionate about creating technology that makes a positive difference. I love exploring how people and machines interact, how robots can support human needs, and how we can build more sustainable digital systems. I'm excited to bring creativity and responsibility together to shape a better tech future.",
+    "I recently completed my Bachelor's and Master's degrees in IT, and I'm passionate about creating technology that makes a positive difference. I love exploring how people and machines interact, how robots can support human needs, and how we can build more sustainable digital systems. I'm excited to bring creativity and responsibility together to shape a better tech future. \n(Sidenote: as of 20 january 2026, this portfolio is still a work in progress!)",
 
   links: {
     email: "Pavlos@live.com",
