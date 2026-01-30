@@ -119,6 +119,14 @@ export const resumeData: ResumeData = {
       links: [
         { label: "GitHub", href: "https://github.com/pavlosgit/portfolio" }
       ]
+    },
+    {
+      name: "Local Business Website",
+      description: "Adjusted and maintain a website for a local small company using one.com's website creator platform.",
+      stack: ["HTML", "CSS", "JavaScript", "one.com"],
+      links: [
+        { label: "Visit Site", href: "https://servcrew.se/" }
+      ]
     }
   ]
 };

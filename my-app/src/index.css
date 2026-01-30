@@ -326,6 +326,34 @@ body { margin: 0; }
   fill: currentColor;
 }
 
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(246,48,73,.1);
+  color: #F63049;
+  border: 1px solid rgba(246,48,73,.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.project-link-btn:hover {
+  background: rgba(246,48,73,.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(246,48,73,.2);
+}
+
+.website-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
 .github-icon {
   font-size: 1.1rem;
   line-height: 1;
