@@ -11,13 +11,13 @@ export default function App() {
   const [modalEducation, setModalEducation] = useState<typeof resumeData.education[0] | null>(null);
 
   return (
-    <div className={`page ${theme}`} id="top">
+    <div className={`page ${theme}`} id="top" role="document">
       <Navbar
         name={resumeData.name}
       />
 
-      <main className="container">
-        <div className="hero">
+      <main className="container" role="main">
+        <div className="hero" role="banner">
           <div>
             <h1>{resumeData.name}</h1>
             <p className="heroTitle">{resumeData.title}</p>
@@ -31,8 +31,21 @@ export default function App() {
             {resumeData.languages?.length ? (
               <p className="muted small">Languages: {resumeData.languages.join(", ")}</p>
             ) : null}
+
+            <div className="hero-actions">
+              <a href="/portfolio/Pavlos_Papadopoulos_CV.pdf" download className="hero-btn primary">
+                📄 Download CV
+              </a>
+              <button type="button" className="hero-btn secondary" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                Get In Touch
+              </button>
+            </div>
           </div>
 
+          <div className="scroll-indicator" role="button" tabIndex={0} aria-label="Scroll to experience section" onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <span className="scroll-text">Scroll to explore</span>
+            <div className="scroll-arrow">↓</div>
+          </div>
         </div>
 
         <Section id="experience" title="Experience" className="page-section">
@@ -123,6 +136,37 @@ export default function App() {
           </div>
         </Section>
 
+        <Section id="certificates" title="Certificates" className="page-section">
+          <div className="grid">
+            {resumeData.certificates.length > 0 ? (
+              resumeData.certificates.map((cert) => (
+                <Card
+                  key={`${cert.name}-${cert.issuer}`}
+                  title={cert.name}
+                  subtitle={cert.issuer}
+                  meta={cert.date}
+                  action={
+                    cert.link ? (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="cert-link-btn"
+                      >
+                        View Certificate
+                      </a>
+                    ) : undefined
+                  }
+                >
+                  {cert.description && <p>{cert.description}</p>}
+                </Card>
+              ))
+            ) : (
+              <p className="muted">No certificates added yet.</p>
+            )}
+          </div>
+        </Section>
+
         <Section id="projects" title="Projects" className="page-section">
           <div className="grid">
             {resumeData.projects.map((p) => (
@@ -170,6 +214,11 @@ export default function App() {
                   ) : undefined
                 }
               >
+                {p.icon && (
+                  <div className="project-icon">
+                    {p.icon}
+                  </div>
+                )}
                 {p.stack?.length ? (
                   <div className="pillRow">
                     {p.stack.map((t) => (

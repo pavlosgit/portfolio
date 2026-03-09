@@ -11,10 +11,11 @@ export default function Navbar({
   name: string;
 }) {
   const [activeSection, setActiveSection] = useState("top");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["experience", "education", "skills", "projects", "contact"];
+      const sections = ["experience", "education", "skills", "certificates", "projects", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       // Check if at top
@@ -42,52 +43,53 @@ export default function Navbar({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (id: string) => {
+    scrollToId(id);
+    setMenuOpen(false);
+  };
+
+  const sections = [
+    { id: "experience", label: "Experience" },
+    { id: "education", label: "Education" },
+    { id: "skills", label: "Skills" },
+    { id: "certificates", label: "Certificates" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <header className="nav">
       <button 
         className={`brand ${activeSection === "top" ? "active" : ""}`}
-        onClick={() => scrollToId("top")} 
+        onClick={() => handleNavClick("top")} 
         type="button"
       >
         {name}
       </button>
 
-      <nav className="navLinks">
-        <button 
-          type="button" 
-          onClick={() => scrollToId("experience")}
-          className={activeSection === "experience" ? "active" : ""}
-        >
-          Experience
-        </button>
-        <button 
-          type="button" 
-          onClick={() => scrollToId("education")}
-          className={activeSection === "education" ? "active" : ""}
-        >
-          Education
-        </button>
-        <button 
-          type="button" 
-          onClick={() => scrollToId("skills")}
-          className={activeSection === "skills" ? "active" : ""}
-        >
-          Skills
-        </button>
-        <button 
-          type="button" 
-          onClick={() => scrollToId("projects")}
-          className={activeSection === "projects" ? "active" : ""}
-        >
-          Projects
-        </button>
-        <button 
-          type="button" 
-          onClick={() => scrollToId("contact")}
-          className={activeSection === "contact" ? "active" : ""}
-        >
-          Contact
-        </button>
+      <button
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav className={`navLinks ${menuOpen ? "navOpen" : ""}`}>
+        {sections.map((s) => (
+          <button
+            key={s.id}
+            type="button"
+            onClick={() => handleNavClick(s.id)}
+            className={activeSection === s.id ? "active" : ""}
+          >
+            {s.label}
+          </button>
+        ))}
       </nav>
     </header>
   );

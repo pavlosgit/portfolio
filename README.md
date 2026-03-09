@@ -26,10 +26,10 @@ Some of the projects presented on the site are public repositories, while others
 
 The portfolio is built using:
 
-- HTML
-- CSS
-- JavaScript
-- GitHub Pages for hosting
+- **React** - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and dev server
+- **GitHub Pages** - Hosting
 
 ---
 
@@ -37,7 +37,9 @@ The portfolio is built using:
 
 The portfolio highlights several projects, including:
 
--tbc
+- **Snake Game (Unity)** - A classic snake game implementation built with Unity and C#
+- **Portfolio Website** - This responsive portfolio built with React and TypeScript
+- **Local Business Website** - Website for a local company using one.com platform
 
 ---
 
@@ -59,6 +61,35 @@ Possible future improvements include:
 - Improving project descriptions
 - Adding more detailed documentation
 - Expanding the portfolio as I build new projects
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation & Development
+
+```bash
+# Navigate to the app directory
+cd my-app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+The site will be available at `http://localhost:5173` during development.
 
 ---
 

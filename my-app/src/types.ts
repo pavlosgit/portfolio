@@ -23,6 +23,7 @@ export type Education = {
 export type Project = {
   name: string;
   description: string;
+  icon?: string;
   stack?: string[];
   links?: Link[];
 };
@@ -30,6 +31,14 @@ export type Project = {
 export type SkillCategory = {
   name: string;
   skills: string[];
+};
+
+export type Certificate = {
+  name: string;
+  issuer: string;
+  date?: string;
+  link?: string;
+  description?: string;
 };
 
 export type ResumeData = {
@@ -48,5 +57,6 @@ export type ResumeData = {
   languages?: string[];
   experience: Experience[];
   education: Education[];
+  certificates: Certificate[];
   projects: Project[];
 };

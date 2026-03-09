@@ -6,11 +6,11 @@ export const resumeData: ResumeData = {
   title: "MSc in Engineering, Computer Science",
   location: "Stockholm, Sweden",
   summary:
-    "I recently completed my Bachelor's and Master's degrees in IT, and I'm passionate about creating technology that makes a positive difference. I love exploring how people and machines interact, how robots can support human needs, and how we can build more sustainable digital systems. I'm excited to bring creativity and responsibility together to shape a better tech future. \n(Sidenote: as of 20 january 2026, this portfolio is still a work in progress!)",
+    "Computer Science graduate (MSc & BSc) with a strong focus on Python development, software engineering, and human-machine interaction. Experienced in building data-driven applications, working with SQL databases, and writing clean, maintainable code. Passionate about creating technology that makes a real difference, from sustainable digital systems to intuitive user experiences.",
 
   links: {
     email: "Pavlos@live.com",
-    phone: "0729027730",
+    phone: "+46729027730",
     github: "https://github.com/pavlosgit",
     linkedin: "https://linkedin.com/in/pavlos-papadopoulos-0a680a130"
   },
@@ -38,6 +38,18 @@ export const resumeData: ResumeData = {
   languages: ["Swedish", "English", "Greek"],
 
   experience: [
+    {
+      period: "2025–Present",
+      org: "Freelance",
+      role: "Web Developer",
+      highlights: [
+        "Maintained and improved an existing company website using HTML, CSS, and JavaScript.",
+        "Enhanced UI/UX design and customized website components.",
+        "Implemented feature updates based on client requirements.",
+        "Managed communication and iterative improvements with the client."
+      ],
+      stack: ["HTML", "CSS", "JavaScript"]
+    },
     {
       period: "2021–2024",
       org: "Järvastaden",
@@ -111,10 +123,38 @@ export const resumeData: ResumeData = {
     }
   ],
 
+  certificates: [
+    {
+      name: "Google AI Essentials Specialization",
+      issuer: "Google",
+      description: "Comprehensive training in AI fundamentals and applications"
+    },
+    {
+      name: "Python Essentials 1 & 2",
+      issuer: "Cisco",
+      description: "Foundational Python programming certification covering core concepts and advanced techniques"
+    },
+    {
+      name: "Oracle Java Foundations",
+      issuer: "Oracle",
+      description: "Certification in Java programming fundamentals"
+    }
+  ],
+
   projects: [
+    {
+      name: "Snake Game (Unity)",
+      description: "A classic snake game implementation built with Unity and C#, featuring smooth controls and progressive difficulty.",
+      icon: "🐍",
+      stack: ["Unity", "C#"],
+      links: [
+        { label: "GitHub", href: "https://github.com/pavlosgit/snake-game-unity" }
+      ]
+    },
     {
       name: "Portfolio Website",
       description: "A fast, responsive portfolio built with React + TypeScript.",
+      icon: "💼",
       stack: ["React", "TypeScript", "Vite"],
       links: [
         { label: "GitHub", href: "https://github.com/pavlosgit/portfolio" }
@@ -123,6 +163,7 @@ export const resumeData: ResumeData = {
     {
       name: "Local Business Website",
       description: "Adjusted and maintain a website for a local small company using one.com's website creator platform.",
+      icon: "🏢",
       stack: ["HTML", "CSS", "JavaScript", "one.com"],
       links: [
         { label: "Visit Site", href: "https://servcrew.se/" }
